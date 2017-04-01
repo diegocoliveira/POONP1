@@ -5,19 +5,15 @@ public class Pessoa {
     private String firstName;
     private String lastName;
     private int id;
-    private int cpf;
-    private int numero;
 
     Pessoa() {
 
     }
 
-    Pessoa(String firstName, String lastName, int id, int cpf, int numero) {
+    Pessoa(String firstName, String lastName, int id) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.id = id;
-        this.cpf = cpf;
-        this.numero = numero;
     }
 
     public String getFirstName() {
@@ -44,19 +40,4 @@ public class Pessoa {
         this.id = id;
     }
 
-    public int getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(int cpf) {
-        this.cpf = cpf;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
 }
