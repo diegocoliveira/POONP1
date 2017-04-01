@@ -27,16 +27,16 @@ public class AgendamentoVoo {
                 new ComissionarioBordo("Dandara", "Carmo", 4)
         };
 
-        Passageiro passageiroFirst[] = new Passageiro[9];
-        Passageiro passageiroSecond[] = new Passageiro[32];
-        Passageiro passageiroThird[] = new Passageiro[64];
+        Passageiro passageiros[] = new Passageiro[303];
 
         do {
-
-            System.out.println("1. Cadastrar um passageiro de primeira classe; ");
-            System.out.println("2. Cadastrar um passageiro de segunda classe: ");
-            System.out.println("3. Cadastrar um passageiro de terceira classe: ");
-            System.out.println("4. Listar passageiros: ");
+            System.out.println("***************************");
+            System.out.println("*          AirFor         *");
+            System.out.println("***************************");
+            System.out.println();
+            System.out.println("1. Cadastrar passageiro. ");
+            System.out.println("2. Listar passageiros. ");
+            System.out.print("Digite sua opção: ");
             opcao = scan.nextInt();
 
             switch (opcao) {
@@ -44,61 +44,21 @@ public class AgendamentoVoo {
                     if (Passageiro.getNumPassageirosFirstClass() == 8) {
                         System.out.println("Primeira Classe lotada");
                     } else {
-                        passageiroFirst[aux1] = new Passageiro();
-                        System.out.println("Digite o primeiro nome do passageiro: ");
-                        passageiroFirst[aux1].setFirstName(scan.next());
-                        System.out.println("Digite o ultimo nome do passageiro: ");
-                        passageiroFirst[aux1].setLastName(scan.next());
-                        System.out.println("Digite o id: ");
-                        passageiroFirst[aux1].setId(scan.nextInt());
+                        passageiros[aux1] = new Passageiro();
+                        System.out.print("Digite o primeiro nome do passageiro: ");
+                        passageiros[aux1].setFirstName(scan.next());
+                        System.out.print("Digite o ultimo nome do passageiro: ");
+                        passageiros[aux1].setLastName(scan.next());
+                        System.out.print("Digite o id: ");
+                        passageiros[aux1].setId(scan.nextInt());
                         Passageiro.incrementaNumPassageirosFirstClass();
                     }
                     break;
                 case 2:
-                    if (Passageiro.getNumPassageirosSecondClass() == 31)
-                        System.out.println("Segunda Classe lotada");
-                    else {
-                        passageiroSecond[aux1] = new Passageiro();
-                        System.out.println("Digite o primeiro nome do passageiro: ");
-                        passageiroSecond[aux1].setFirstName(scan.next());
-                        System.out.println("Digite o ultimo nome do passageiro: ");
-                        passageiroSecond[aux1].setLastName(scan.next());
-                        System.out.println("Digite o id: ");
-                        passageiroSecond[aux1].setId(scan.nextInt());
-                        Passageiro.incrementaNumPassageirosSecondClass();
-                    }
-                    break;
-                case 3:
-                    if (Passageiro.getNumPassageirosThirdClass() == 63) {
-                        System.out.println("Terceira Classe lotada");
-                    } else {
-                        passageiroThird[aux1] = new Passageiro();
-                        System.out.println("Digite o primeiro nome do passageiro: ");
-                        passageiroThird[aux1].setFirstName(scan.next());
-                        System.out.println("Digite o ultimo nome do passageiro: ");
-                        passageiroThird[aux1].setLastName(scan.next());
-                        System.out.println("Digite o id: ");
-                        passageiroThird[aux1].setId(scan.nextInt());
-                        Passageiro.incrementaNumPassageirosThirdClass();
-                    }
-                    break;
-                case 4:
-                    System.out.println("Primeira classe: ");
-                    for (int i = 0; i < passageiroFirst.length; i++) {
-                        if (passageiroFirst[i] != null) {
-                            System.out.println("\t" + passageiroFirst[i].getFirstName());
-                        }
-                    }
-                    System.out.println("Segunda classe: ");
-                    for (int i = 0; i < passageiroSecond.length; i++) {
-                        if (passageiroSecond[i] != null) {
-                            System.out.println("\t" + passageiroSecond[i].getFirstName());
-                        }
-                    }
-                    System.out.println("Terceira classe: ");
-                    for (int i = 0; i < passageiroThird.length; i++) {
-                        if (passageiroThird[i] != null) {
-                            System.out.println("\t" + passageiroThird[i].getFirstName());
+                    System.out.println("\nPassageiros: ");
+                    for (int i = 0; i < passageiros.length; i++) {
+                        if (passageiros[i] != null) {
+                            System.out.println("\t" + passageiros[i].getFirstName());
                         }
                     }
                     System.out.println();
