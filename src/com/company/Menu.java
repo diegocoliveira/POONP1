@@ -13,8 +13,17 @@ public class Menu {
         passageiro.setLastName(scan.next());
         System.out.print("Digite o id: ");
         passageiro.setId(scan.nextInt());
-        scan.close();
         return passageiro;
     }
 
+    public static void listaDePassageiros(Passageiro passageiros[]) {
+        System.out.println("\nPassageiros: ");
+        for (int i = 0; i < passageiros.length; i++) {
+            if (passageiros[i] != null) {
+                System.out.println("\t" + passageiros[i].getFirstName());
+            }
+        }
+        System.out.println();
+
+    }
 }

@@ -7,11 +7,11 @@ public class AgendamentoVoo {
 
     public static void main(String[] args) {
 
-        CadastroTripulacaoPassageiros();
+        cadastroTripulacaoPassageiros();
 
     }
 
-    public static void CadastroTripulacaoPassageiros() {
+    public static void cadastroTripulacaoPassageiros() {
 
 
         int opcao = 0, indexAtual = 0;
@@ -59,22 +59,10 @@ public class AgendamentoVoo {
 
             switch (opcao) {
                 case 1:
-                    passageiros[indexAtual] = new Passageiro();
-                    System.out.print("Digite o primeiro nome do passageiro: ");
-                    passageiros[indexAtual].setFirstName(scan.next());
-                    System.out.print("Digite o ultimo nome do passageiro: ");
-                    passageiros[indexAtual].setLastName(scan.next());
-                    System.out.print("Digite o id: ");
-                    passageiros[indexAtual].setId(scan.nextInt());
+                    passageiros[indexAtual] = Menu.cadastroPassageiro();
                     break;
                 case 2:
-                    System.out.println("\nPassageiros: ");
-                    for (int i = 0; i < passageiros.length; i++) {
-                        if (passageiros[i] != null) {
-                            System.out.println("\t" + passageiros[i].getFirstName());
-                        }
-                    }
-                    System.out.println();
+                    Menu.listaDePassageiros(passageiros);
                     break;
             }
             indexAtual++;

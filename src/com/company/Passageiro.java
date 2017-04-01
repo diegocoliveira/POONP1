@@ -1,6 +1,8 @@
 package com.company;
 
 
+import java.util.Scanner;
+
 public class Passageiro extends Pessoa {
 
 
@@ -13,6 +15,5 @@ public class Passageiro extends Pessoa {
     Passageiro(String firstName, String lastName, int id) {
         super(firstName, lastName, id);
     }
-
 
 }
