@@ -14,13 +14,31 @@ public class AgendamentoVoo {
     public static void CadastroTripulacaoPassageiros() {
 
 
-        int opcao = 0, aux1 = 0, aux2 = 0, aux3 = 0;
+        int opcao = 0, indexAtual = 0;
 
-        Piloto piloto = new Piloto("Daniel", "Carmo", 12);
+        Piloto pilotoDaniel = new Piloto("Daniel", "Carmo", 12);
+        Piloto pilotoVinicus = new Piloto("Vinicius", "Carmo", 11);
+        Piloto pilotoAlexandre = new Piloto("Alexandre", "Carmo", 15);
 
-        CoPiloto copiloto = new CoPiloto("Joel", "Carmo", 13);
+        CoPiloto coPilotoJoel = new CoPiloto("Joel", "Carmo", 13);
+        CoPiloto coPilotoLuis = new CoPiloto("Luis", "Rios", 14);
+        CoPiloto coPilotoYuri = new CoPiloto("Yuri", "Carmo", 25);
 
-        ComissionarioBordo comissionariosDeBordo[] = new ComissionarioBordo[]{
+        ComissionarioBordo comissionariosDeBordoEquipe1[] = new ComissionarioBordo[]{
+                new ComissionarioBordo("Dandara", "Carmo", 1),
+                new ComissionarioBordo("Dandara", "Carmo", 2),
+                new ComissionarioBordo("Dandara", "Carmo", 3),
+                new ComissionarioBordo("Dandara", "Carmo", 4)
+        };
+
+        ComissionarioBordo comissionariosDeBordoEquipe2[] = new ComissionarioBordo[]{
+                new ComissionarioBordo("Dandara", "Carmo", 1),
+                new ComissionarioBordo("Dandara", "Carmo", 2),
+                new ComissionarioBordo("Dandara", "Carmo", 3),
+                new ComissionarioBordo("Dandara", "Carmo", 4)
+        };
+
+        ComissionarioBordo comissionariosDeBordoEquipe3[] = new ComissionarioBordo[]{
                 new ComissionarioBordo("Dandara", "Carmo", 1),
                 new ComissionarioBordo("Dandara", "Carmo", 2),
                 new ComissionarioBordo("Dandara", "Carmo", 3),
@@ -41,18 +59,13 @@ public class AgendamentoVoo {
 
             switch (opcao) {
                 case 1:
-                    if (Passageiro.getNumPassageirosFirstClass() == 8) {
-                        System.out.println("Primeira Classe lotada");
-                    } else {
-                        passageiros[aux1] = new Passageiro();
-                        System.out.print("Digite o primeiro nome do passageiro: ");
-                        passageiros[aux1].setFirstName(scan.next());
-                        System.out.print("Digite o ultimo nome do passageiro: ");
-                        passageiros[aux1].setLastName(scan.next());
-                        System.out.print("Digite o id: ");
-                        passageiros[aux1].setId(scan.nextInt());
-                        Passageiro.incrementaNumPassageirosFirstClass();
-                    }
+                    passageiros[indexAtual] = new Passageiro();
+                    System.out.print("Digite o primeiro nome do passageiro: ");
+                    passageiros[indexAtual].setFirstName(scan.next());
+                    System.out.print("Digite o ultimo nome do passageiro: ");
+                    passageiros[indexAtual].setLastName(scan.next());
+                    System.out.print("Digite o id: ");
+                    passageiros[indexAtual].setId(scan.nextInt());
                     break;
                 case 2:
                     System.out.println("\nPassageiros: ");
@@ -64,7 +77,7 @@ public class AgendamentoVoo {
                     System.out.println();
                     break;
             }
-
+            indexAtual++;
         } while (opcao != 0);
     }
 }
