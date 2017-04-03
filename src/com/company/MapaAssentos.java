@@ -1,11 +1,11 @@
 public class MapaAssentos {
 
-    static char [][] primeiraClasse =
+    private char [][] primeiraClasse =
             {{'X','X','X'},
              {'X','X','X'},
              {'X','X','X'}};
 
-    static char [][] classeExecutiva =
+    private char [][] classeExecutiva =
             {{'X','X','X','X'},
              {'X','X','X','X'},
              {'X','X','X','X'},
@@ -15,7 +15,7 @@ public class MapaAssentos {
              {'X','X','X','X'},
              {'X','X','X','X'}};
 
-    static char [][] classeEconomica =
+    private char [][] classeEconomica =
             {{'X','X','X','X','X','X'},
              {'X','X','X','X','X','X'},
              {'X','X','X','X','X','X'},
@@ -70,4 +70,28 @@ public class MapaAssentos {
          System.out.println("'-' - Poltrona Ocupada");
 
      }
+    
+     public char[][] getPrimeiraClasse() {
+        return primeiraClasse;
+    }
+
+    public void setPrimeiraClasse(char[][] primeiraClasse) {
+        this.primeiraClasse = primeiraClasse;
+    }
+
+    public char[][] getClasseExecutiva() {
+        return classeExecutiva;
+    }
+
+    public void setClasseExecutiva(char[][] classeExecutiva) {
+        this.classeExecutiva = classeExecutiva;
+    }
+
+    public char[][] getClasseEconomica() {
+        return classeEconomica;
+    }
+
+    public void setClasseEconomica(char[][] classeEconomica) {
+        this.classeEconomica = classeEconomica;
+    }
 }
